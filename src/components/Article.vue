@@ -71,8 +71,8 @@ export default {};
 .detail {
 	margin-left: 12px;
 }
-.fas,
-.far {
+.dropdown .fas,
+.dropdown .far {
 	margin-top: 10px;
 }
 .dropdown {

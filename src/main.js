@@ -29,6 +29,9 @@ const router = new VueRouter({
 		{ path: '/about', name: 'about', component: About },
 	],
 });
+
+export const EventBus = new Vue();
+
 new Vue({
 	router,
 	render: (h) => h(App),

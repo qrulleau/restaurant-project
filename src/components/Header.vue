@@ -10,10 +10,11 @@
 					<li><router-link to="#">Popular</router-link></li>
 				</ul>
 				<ul class="login">
-					<li @click="$emit('showModalChange', true)"><a>Sign up</a></li>
-					<li>
-						<a href="#"> Login</a>
-						>
+					<li @click="$emit('showModalChange', true)">
+						<a>Sign up</a>
+					</li>
+					<li @click="$emit('showModalChange', true)">
+						<a>Login</a>
 					</li>
 				</ul>
 			</div>
@@ -60,7 +61,6 @@ export default {
 	methods: {
 		showLoginModal() {
 			this.login = true;
-			console.log('test connexion');
 		},
 	},
 	props: ['showRegisterModal'],

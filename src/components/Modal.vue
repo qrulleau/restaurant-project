@@ -1,39 +1,14 @@
 <template>
-	<div class="modal">
-		<div class="modal-container">
-			<a class="cancel relative-position">
-				<span class="absolute-position"
-					><i class="fa fa-times" aria-hidden="true"></i
-				></span>
-			</a>
-			<h2>Login</h2>
-			<input type="text" />
-			<input type="password" />
-			<div class="d-flex item-baseline">
-				<div class="d-flex item-center">
-					<input type="checkbox" name="" id="" />
-					<p>Remember me</p>
-				</div>
-				<div class="d-flex item-center">
-					<h3>Forgot Password ?</h3>
-					<i class="fa fa-arrow-right" aria-hidden="true"></i>
-				</div>
-			</div>
-			<router-link tag="button" to="/">Login</router-link>
-			<div class="social">
-				<p>Or Login with:</p>
-				<div class="d-flex container-social">
-					<i class="fab fa-facebook-f" aria-hidden="true"></i>
-					<i class="fab fa-google" aria-hidden="true"></i>
-					<i class="fab fa-twitter" aria-hidden="true"></i>
-				</div>
-			</div>
-		</div>
-	</div>
+	<modal-login></modal-login>
 </template>
 
 <script>
-export default {};
+import ModalLogin from './formModal/ModalLogin.vue';
+export default {
+	components: {
+		ModalLogin,
+	},
+};
 </script>
 
 <style scoped>
@@ -58,10 +33,11 @@ input[type='password'] {
 	left: 0;
 	bottom: 0;
 	right: 0;
-	background-color: rgba(0, 0, 0, 0.2);
+	background-color: rgba(0, 0, 0, 0.6);
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	z-index: 50;
 }
 .modal-container {
 	background-color: #fff;
@@ -71,6 +47,7 @@ input[type='password'] {
 }
 p {
 	color: #6b6768;
+	font-family: 'catamaran', sans-serif;
 }
 .item-baseline {
 	align-items: baseline;
@@ -100,5 +77,10 @@ span {
 }
 .relative-position {
 	position: relative;
+}
+.placement-cancel {
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 10px;
 }
 </style>

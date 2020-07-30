@@ -72,7 +72,7 @@ export default {};
 }
 .card {
 	margin: 18px;
-	height: 140px;
+	height: 130px;
 	overflow: hidden;
 	transition: 300ms;
 }

@@ -16,16 +16,20 @@
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
 import Modal from './components/Modal.vue';
+import { EventBus } from './main';
 export default {
 	components: {
 		appHeader: Header,
 		appFooter: Footer,
-		modal: Modal,
+		Modal,
 	},
 	data() {
 		return {
 			showRegisterModal: false,
 		};
+	},
+	created() {
+		EventBus.$on('noDisplayModal', (v) => (this.showRegisterModal = v));
 	},
 };
 </script>
@@ -163,6 +167,7 @@ table {
 a {
 	text-decoration: none;
 	color: black;
+	cursor: pointer;
 }
 ul li {
 	display: inline;
@@ -230,19 +235,27 @@ button {
 #sponsors h2 {
 	font-size: 35px;
 }
-#sponsors button {
+#sponsors button,
+#newsletter button,
+.login button,
+.second-grid button {
 	color: #fff;
 	background-color: #000000;
 	transition: 400ms;
 	border: 1px solid #000000;
 }
-#sponsors button:hover {
+#sponsors button:hover,
+#newsletter button:hover,
+.login button:hover,
+.second-grid button:hover {
 	color: #000000;
 	background-color: #fff;
 	border: 1px solid #000000;
+	font-weight: bold;
 }
 #sponsors p {
 	margin: 36px 0;
+	line-height: 150%;
 }
 .adjust {
 	margin-left: 18px;
@@ -266,7 +279,10 @@ span {
 	height: 7px;
 }
 #sponsors span,
-#instagram .instagram span {
+#instagram .instagram span,
+.yellow-span h1 span,
+#ressource p span,
+#ressource ul li span {
 	border: none;
 	position: absolute;
 	border-bottom: 3px solid #fee86d;
@@ -278,7 +294,10 @@ span {
 	width: 117px;
 }
 #sponsors h2,
-#instagram .instagram h2 {
+#instagram .instagram h2,
+.yellow-span h1,
+#ressource p,
+#ressource ul li {
 	position: relative;
 	z-index: 10;
 }

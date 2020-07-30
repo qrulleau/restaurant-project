@@ -169,7 +169,7 @@ h2 {
 }
 p {
 	font-size: 18px;
-	letter-spacing: 150%;
+	line-height: 150%;
 	color: #626262;
 }
 .tier-grid {
@@ -258,7 +258,7 @@ input {
 }
 .input-hover,
 textarea {
-	z-index: 150;
+	z-index: 20;
 	width: 380px;
 	bottom: 47%;
 	background: initial;
