@@ -139,6 +139,7 @@
 							</div>
 						</div>
 					</div>
+					<div class="footer-forum"></div>
 				</section>
 			</div>
 		</div>
@@ -150,6 +151,11 @@ export default {};
 </script>
 
 <style scoped>
+.footer-forum {
+	background-color: #f3f3f3;
+	width: 100%;
+	height: 29px;
+}
 .inline-grid {
 	display: grid;
 }
@@ -198,7 +204,7 @@ input[type='checkbox'] {
 	margin-bottom: 12px;
 }
 .small-container p {
-	margin: 0 0 0 12px;
+	margin: 0 0 0 6px;
 }
 .recent-topic {
 	margin-top: 30px;

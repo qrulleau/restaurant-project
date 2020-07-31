@@ -3,12 +3,19 @@
 		<app-header
 			showRegisterModal="false"
 			@showModalChange="(v) => (showRegisterModal = v)"
+			showSignupModalIncroyable="false"
+			@showSignup="(v) => (showSignupModalIncroyable = v)"
 		></app-header>
 		<transition name="fade" mode="out-in">
 			<router-view></router-view>
 		</transition>
 		<app-footer></app-footer>
-		<modal v-show="showRegisterModal"></modal>
+		<modal v-show="showRegisterModal">
+			<login-form></login-form>
+		</modal>
+		<modal v-show="showSignupModalIncroyable">
+			<signup-form></signup-form>
+		</modal>
 	</div>
 </template>
 
@@ -16,20 +23,26 @@
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
 import Modal from './components/Modal.vue';
+import LoginForm from './components/formModal/LoginForm.vue';
+import SignupForm from './components/formModal/SignupForm.vue';
 import { EventBus } from './main';
 export default {
 	components: {
 		appHeader: Header,
 		appFooter: Footer,
 		Modal,
+		LoginForm,
+		SignupForm,
 	},
 	data() {
 		return {
 			showRegisterModal: false,
+			showSignupModalIncroyable: false,
 		};
 	},
 	created() {
-		EventBus.$on('noDisplayModal', (v) => (this.showRegisterModal = v));
+		EventBus.$on('CloseModal', (v) => (this.showRegisterModal = v));
+		EventBus.$on('CloseModal', (v) => (this.showSignupModalIncroyable = v));
 	},
 };
 </script>

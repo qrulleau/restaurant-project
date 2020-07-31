@@ -10,7 +10,7 @@
 					<li><router-link to="#">Popular</router-link></li>
 				</ul>
 				<ul class="login">
-					<li @click="$emit('showModalChange', true)">
+					<li @click="$emit('showSignup', true)">
 						<a>Sign up</a>
 					</li>
 					<li @click="$emit('showModalChange', true)">
@@ -56,14 +56,18 @@ export default {
 		return {
 			cards: '$0.00',
 			login: false,
+			signup: false,
 		};
 	},
 	methods: {
 		showLoginModal() {
 			this.login = true;
 		},
+		showSignupModal() {
+			this.signup = true;
+		},
 	},
-	props: ['showRegisterModal'],
+	props: ['showRegisterModal', 'showSignupModalIncroyable'],
 };
 </script>
 

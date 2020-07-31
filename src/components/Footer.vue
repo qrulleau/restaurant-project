@@ -5,10 +5,10 @@
 		</div>
 		<div>
 			<ul>
-				<li><router-link to="#">Home</router-link></li>
-				<li><router-link to="#">Shop</router-link></li>
-				<li><router-link to="#">About</router-link></li>
-				<li><router-link to="#">Contact</router-link></li>
+				<li><router-link to="/">Home</router-link></li>
+				<li><router-link to="/shop">Shop</router-link></li>
+				<li><router-link to="/about">About</router-link></li>
+				<li><router-link to="/contact">Contact</router-link></li>
 			</ul>
 		</div>
 		<div class="d-flex">

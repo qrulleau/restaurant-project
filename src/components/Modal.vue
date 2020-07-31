@@ -1,32 +1,28 @@
 <template>
-	<modal-login></modal-login>
+	<div class="modal">
+		<div class="modal-container">
+			<div class="placement-cancel">
+				<a class="cancel" @click="hideModal">
+					<i class="fa fa-times" aria-hidden="true"></i>
+				</a>
+			</div>
+			<slot></slot>
+		</div>
+	</div>
 </template>
 
 <script>
-import ModalLogin from './formModal/ModalLogin.vue';
+import { EventBus } from '../main';
 export default {
-	components: {
-		ModalLogin,
+	methods: {
+		hideModal() {
+			EventBus.$emit('CloseModal');
+		},
 	},
 };
 </script>
 
 <style scoped>
-h2 {
-	font-size: 23px;
-}
-input[type='text'],
-input[type='password'] {
-	border: none;
-	border: 1px solid #edebeb;
-	display: block;
-	width: 100%;
-	margin-bottom: 10px;
-	height: 58px;
-}
-.fa-arrow-right {
-	margin: 0 0 0 9px;
-}
 .modal {
 	position: fixed;
 	top: 0;
@@ -42,45 +38,27 @@ input[type='password'] {
 .modal-container {
 	background-color: #fff;
 	width: 420px;
-	height: 440px;
 	padding: 30px;
-}
-p {
-	color: #6b6768;
-	font-family: 'catamaran', sans-serif;
-}
-.item-baseline {
-	align-items: baseline;
-	margin: 9px 0px;
-}
-.container-social {
-	width: 70px;
-}
-.social p {
-	margin-top: 18px;
-	margin-bottom: 9px;
-}
-span {
-	border: none;
 }
 .cancel {
 	width: 22px;
 	height: 22px;
 	background-color: #fee86d;
-	display: block;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	border-radius: 50%;
+	transition: 500ms;
 }
-.absolute-position {
-	position: absolute;
-	left: 28%;
-	top: 16%;
-}
-.relative-position {
-	position: relative;
+.cancel:hover {
+	transform: scale(1.4);
 }
 .placement-cancel {
 	display: flex;
 	justify-content: flex-end;
 	margin-bottom: 10px;
+}
+i {
+	margin-right: 0;
 }
 </style>
