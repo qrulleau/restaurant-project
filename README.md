@@ -1,5 +1,7 @@
 # restaurant-project
 
+project for practising VueJs 
+
 ## Project setup
 ```
 npm install
